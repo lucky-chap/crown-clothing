@@ -13,6 +13,38 @@ const config = {
     measurementId: "G-1W6LKTHFTD"
   };
 
+// Take user auth object and store in databse
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  // userAuth in this case refers to the authenticated user object, log to see in console
+  if(!userAuth) return;
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  // .exists is a property on every snapshot
+  // the snapshot is the actual data you want from userRef, (read the docs)
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      // now create the user, or set the user
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      })
+    } catch(err) {
+      console.log('error creating user', err.message)
+    }
+
+  }
+
+  // console.log(snapShot);
+  return userRef;
+
+}
+
+
 firebase.initializeApp(config);
 
 // For access to authentication methods
