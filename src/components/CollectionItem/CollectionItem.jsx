@@ -22,7 +22,7 @@ const CollectionItem = ({ item, addItem }) => {
         <span className='price'>{price}</span>
       </div>
       { /* addItem(item) dispatches the item to the items array in the redux store
-       check the cart folder in redux for more details */ } 
+       Check the cart folder in redux for more details */ } 
       <CustomButton onClick={() => addItem(item)} inverted >Add to cart</CustomButton>
     </div>
   );
