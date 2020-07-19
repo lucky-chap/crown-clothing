@@ -20,7 +20,8 @@ import { createSelector } from 'reselect';
 
 // Starting with the first type of selector, INPUT SELECTOR
 // This only takes a part of state, specifically the cart and returns a slice or part of it
-// The naming convention is usually selectCart or cartSelector, but imma use selectCart
+// The naming convention is usually selectCart or cartSelector, but i will use selectCart
+// 'cart' here refers to the key that points to cart_reducer in RootReducer.js
 const selectCart = state => state.cart;
 
 export const selectCartItems = createSelector(
@@ -39,3 +40,16 @@ export const selectCartItemsCount = createSelector(
 )
 
 
+// This is for the 'hidden' state toggler for the cart dropdown
+export const selectCartHidden = createSelector(
+    [selectCart],
+    (cart) => cart.hidden
+)
+
+
+export const selectCartTotal = createSelector(
+    [selectCartItems],
+    cartItems => cartItems.reduce(
+        (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity * cartItem.price
+    ,0)
+)
