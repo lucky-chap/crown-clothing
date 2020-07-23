@@ -3,9 +3,12 @@ import { createStore, applyMiddleware } from 'redux';
 // Check console for more info about it
 import logger from 'redux-logger';
 import RootReducer from './RootReducer';
+// For keeping user session
+import { persistStore } from 'redux-persist'
 
 const middlewares = [logger];
 
-const store = createStore(RootReducer, applyMiddleware(...middlewares));
+export const store = createStore(RootReducer, applyMiddleware(...middlewares));
+export const persistor = persistStore(store);
 
-export default store;
+

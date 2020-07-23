@@ -5,12 +5,20 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import store from './redux/Store';
+// For the persistor we need
+import { PersistGate } from 'redux-persist/integration/react';
+
+// Now you also import persistor
+import {store, persistor } from './redux/Store';
+// You now wrap App with PersistGate and give it a prop of persistor,
+// then that prop's value will be the 'persistor' you imported from './redux/Store' 
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Router>
   </Provider>,
   document.getElementById('root')

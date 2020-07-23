@@ -1,5 +1,5 @@
 // USIGN MEMOIZATION FOR OPTIMIZATION
-// There are two types of selectors; Input Selectors, which do not use the createSelector function,
+// There are two types of selectors; Input Selectors, which use the createSelector function,
 // and there's also Output Selectors, that uses Input Selctors and the createSelector function
 // to build itself
 
