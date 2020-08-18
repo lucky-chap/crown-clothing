@@ -1,19 +1,44 @@
 .collection-page {
     display: flex;
     flex-direction: column;
-  
+
     .title {
       font-size: 38px;
       margin: 0 auto 30px;
     }
-  
+
     .items {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 10px;
-  
+
       & .collection-item {
         margin-bottom: 30px;
       }
     }
   }
+
+
+
+@media screen and (max-width: 1000px) {
+  .collection-page .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .collection-page .items .collection-item {
+    padding: 10px;
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .collection-page .items .collection-item {
+    padding: 10px;
+    width: 100%;
+  }
+}

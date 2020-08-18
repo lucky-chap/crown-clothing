@@ -24,3 +24,13 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .header .options {
+    width: auto;
+  }
+
+  .header .options .option {
+    padding: 10px 7px;
+  }
+}

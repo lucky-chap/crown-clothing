@@ -46,3 +46,10 @@
   }
 
 }
+
+@media screen and (max-width: 800px) {
+  .custom-button {
+    margin-bottom: 7px;
+    width: 90%;
+  }
+}
