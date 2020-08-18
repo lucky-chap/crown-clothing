@@ -13,3 +13,32 @@
     justify-content: space-between;
   }
 }
+
+
+@media screen and (max-width: 1000px) {
+  .collection-preview {
+    width: 100%;
+  }
+
+  .collection-preview .preview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .collection-preview .preview .collection-item {
+    padding: 10px;
+    width: 50%;
+  }
+
+}
+
+// Remove this media query to make items in shop appear side by side
+@media screen and (max-width: 800px) {
+  .collection-preview .preview .collection-item {
+    padding: 10px;
+    width: 100%;
+  }
+}

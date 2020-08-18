@@ -14,3 +14,10 @@
   }
 
 }
+
+
+@media screen and (max-width: 800px) {
+  .sign-in .buttons {
+    flex-direction: column;
+ }
+}
