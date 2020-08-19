@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React from "react";
-=======
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
->>>>>>> 9241494... Added functionality to view current authenticated user
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { connect } from "react-redux";
 
