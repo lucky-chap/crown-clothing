@@ -25,6 +25,13 @@
   }
 }
 
+.userName {
+  background-color: slategray;
+  color: white;
+  border-radius: 100%;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 900px) {
   .header .options {
     width: auto;
