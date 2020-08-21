@@ -27,8 +27,8 @@ const Header = ({ currentUser, hidden }) => {
         <Link to="/shop" className="option">
           SHOP
         </Link>
-        <Link to="/contact" className="option">
-          CONTACT
+        <Link to="/about" className="option">
+          ABOUT
         </Link>
         {currentUser ? (
           <Fragment>
